@@ -5,7 +5,6 @@ var locastyle = (function() {
     bgShortcutWorkaround();
     breakpointWindowWidth();
     btnGroupActivationToogle();
-    subMenu();
     checkMainSidebar();
     toggleTextOnClick(dom_scope);
     toggleTextOnHover(dom_scope);
@@ -13,6 +12,7 @@ var locastyle = (function() {
     classToggle(dom_scope);
     select2DefaultConfig(dom_scope, '');
     btnGroupActivationToogle(dom_scope);
+    subMenu();
   }
 
   // Aquele background cinza que fica sempre atrás do elemento Shortcut
@@ -152,8 +152,13 @@ var locastyle = (function() {
   var subMenu = function(){
     $("[data-toggle='submenu']").on('click', function(e){
       e.preventDefault();
+<<<<<<< HEAD
       $('.submenu').addClass('hidden');
       $(this).next('.submenu').removeClass('hidden');
+=======
+      $(this).prev('.submenu').toggleClass('hidden');
+      $(this).next('.submenu').toggleClass('hidden');
+>>>>>>> adicionando a funcao de submenu
       $(this).toggleClass("active");
     })
   }
