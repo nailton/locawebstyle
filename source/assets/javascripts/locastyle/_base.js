@@ -8,7 +8,9 @@ var locastyle = (function() {
     toggleTextOnHover();
     linkPreventDefault();
     classToggle();
+    select2DefaultConfig();
     btnGroupActivationToogle();
+    subMenu();
   }
 
   // Aquele background cinza que fica sempre atrás do elemento Shortcut
@@ -103,11 +105,45 @@ var locastyle = (function() {
     });
   }
 
+  //Minimiza o resultado para a busca
+  function select2DefaultConfig(exclude){
+    $('.select2').not(exclude).each(function(i, el){
+      var $select = $(el);
+      var $optionList = $select.find('option');
+      var visible;
+      if( $select.data('search') == false  ){
+        visible = -1;
+      } else {
+        visible = ( $optionList.size() <= 10 ? -1 : 7 );
+      }
+      if( $select.attr('placeholder') && !$select.attr('multiple') ){
+        if( $select.find('[selected]').size() === 0 ){
+          $select.prepend('<option selected></option>');
+        }else{
+          $select.prepend('<option></option>');
+        }
+      }
+      $select.select2({
+        allowClear: true,
+        minimumResultsForSearch: visible
+      });
+    });
+  }
+
   function btnGroupActivationToogle() {
     $(".btn-group.activation-toggle .btn").on("click", function() {
       $(this).siblings().removeClass("active");
       $(this).addClass("active");
     });
+  }
+
+  var subMenu = function(){
+    $("[data-toggle='submenu']").on('click', function(e){
+      e.preventDefault();
+      $('.submenu').addClass('hidden');
+      $(this).next('.submenu').removeClass('hidden');
+      $(this).toggleClass("active");
+    })
   }
 
   return {
