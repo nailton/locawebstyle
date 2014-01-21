@@ -1,17 +1,18 @@
 var locastyle = (function() {
   'use strict';
 
-  function init(){
+  function init(dom_scope){
     bgShortcutWorkaround();
     breakpointWindowWidth();
-    toggleTextOnClick();
-    toggleTextOnHover();
-    linkPreventDefault();
-    classToggle();
-    select2DefaultConfig();
     btnGroupActivationToogle();
     subMenu();
     checkMainSidebar();
+    toggleTextOnClick(dom_scope);
+    toggleTextOnHover(dom_scope);
+    linkPreventDefault(dom_scope);
+    classToggle(dom_scope);
+    select2DefaultConfig(dom_scope);
+    btnGroupActivationToogle(dom_scope);
   }
 
   // Aquele background cinza que fica sempre atrás do elemento Shortcut
@@ -77,8 +78,8 @@ var locastyle = (function() {
     }
   }
 
-  function linkPreventDefault() {
-    $("a").on("click", function(e){
+  function linkPreventDefault(dom_scope) {
+    $("a", dom_scope).on("click", function(e){
       if($(this).attr("href") === "" || $(this).attr("href") === "#"){
         e.preventDefault();
       }
@@ -86,15 +87,15 @@ var locastyle = (function() {
   }
 
   // Troca de texto
-  function toggleTextOnClick() {
-    $('[data-event="click"]').on("click", function(e) {
+  function toggleTextOnClick(dom_scope) {
+    $('[data-event="click"]', dom_scope).on("click", function(e) {
       e.preventDefault();
       toggleText(this);
     });
   }
 
-  function toggleTextOnHover() {
-    $('[data-event="hover"]').on("mouseover", function(e) {
+  function toggleTextOnHover(dom_scope) {
+    $('[data-event="hover"]', dom_scope).on("mouseover", function(e) {
       e.preventDefault();
       toggleText(this);
     });
@@ -108,8 +109,8 @@ var locastyle = (function() {
   }
 
   // Troca de classes
-  function classToggle() {
-    $('[data-classtoggle]').on('click', function(e){
+  function classToggle(dom_scope) {
+    $('[data-classtoggle]', dom_scope).on('click', function(e){
       e.preventDefault();
       var classes = $(this).data('classtoggle').split(',');
       $(this).toggleClass(classes[0]).toggleClass(classes[1]);
@@ -117,8 +118,8 @@ var locastyle = (function() {
   }
 
   //Minimiza o resultado para a busca
-  function select2DefaultConfig(exclude){
-    $('.ls-select').not(exclude).each(function(i, el){
+  function select2DefaultConfig(exclude, dom_scope){
+    $('.select2', dom_scope).not(exclude).each(function(i, el){
       var $select = $(el);
       var $optionList = $select.find('option');
       var visible;
@@ -141,8 +142,8 @@ var locastyle = (function() {
     });
   }
 
-  function btnGroupActivationToogle() {
-    $(".btn-group.activation-toggle .btn").on("click", function() {
+  function btnGroupActivationToogle(dom_scope) {
+    $(".btn-group.activation-toggle .btn", dom_scope).on("click", function() {
       $(this).siblings().removeClass("active");
       $(this).addClass("active");
     });
