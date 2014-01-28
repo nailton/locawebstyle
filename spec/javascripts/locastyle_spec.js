@@ -1,4 +1,4 @@
-describe("Locastyle in general", function() {
+describe("Locastyle in general: ", function() {
   beforeEach(function() {
     loadFixtures('locastyle_general_fixture.html');
     locastyle.init();
