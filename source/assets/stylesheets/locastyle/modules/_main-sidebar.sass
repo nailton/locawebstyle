@@ -1,0 +1,57 @@
+.with-lwbar-both .main-sidebar,
+.with-lwbar-header .main-sidebar
+	margin-top: 34px
+
+.active-main-sidebar .main-sidebar,
+.active-main-sidebar .wrap-content
+	-webkit-transform: translate3D(0, 0, 0)
+
+.active-main-sidebar .ico-plus
+	left: 250px
+
+.ico-plus
+	position: relative
+	left: 0
+	transition: all .2s ease-in
+
+.main-sidebar
+	position: fixed
+	z-index: 2
+	background-color: #333
+	min-height: 100%
+	width: 240px
+	height: 100%
+	-webkit-transform: translate3D(-240px, 0, 0)
+	transition: -webkit-transform .2s ease-in
+
+	ul
+		border-top: 1px solid $gray1
+
+		&.submenu
+			padding: 0 !important
+			background: #000
+
+			li a
+				padding-left: 20px
+
+			li:last-child
+				border: none
+
+		li
+			list-style: none
+			border-bottom: 1px solid rgba( #fff, .1)
+
+			a
+				display: block
+				padding: 10px 10px 10px 15px
+				font-size: 16px
+				border-left: 5px solid transparent
+				color: #fff
+
+				&.active,
+				&:hover,
+				&:focus
+					background: $gray1
+					text-decoration: none
+					border-left-color: $gray2
+					color: #fff
