@@ -1,5 +1,33 @@
 $height-short: 350px
 
+//
+// Estrutura BASE
+//
+.with-main-sidebar body
+	overflow: hidden
+
+
+// .main-content - Div PRINCIPAL que envolve lateral da esquerda e conteúdo principal
+.main-content
+	height: 100%
+
+// Wrap que envolve conteúdo principal
+.wrap-content
+	overflow: auto
+	height: 100%
+	width: 100%
+	position: relative
+	padding-top: 60px
+
+.wrap-content > .row
+	margin-right: 0
+	margin-left: 0
+
+
+.wrap-all
+	position: relative
+	background: gray
+
 .content[role="main"]
 	padding-top: 40px
 
@@ -14,23 +42,13 @@ a
 	+ .container
 		clear: both
 
-// main-content - Usa-se para formato com o menu lateral
-.main-content
-	height: 100%
-	overflow: hidden
-	margin-right: 10px
-	margin-left: 300px
-	padding: 60px 10px 10px 10px
-	position: relative
-	z-index: 1
-
 // Define características do Overlay que aparece quando usamos sidebar
 .overlay-bar
 	+transition(all .20s linear)
 	position: fixed
 	top: 0
 	left: 0
-	z-index: 1
+	z-index: 2
 	background: #000
 	opacity: 0
 	visibility: hidden
@@ -102,7 +120,7 @@ a
 		opacity: .8
 
 //
-// Barra com formulários
+// Barra com botões de ações
 //
 .actions-toolbar
 	border-bottom: 1px solid $gray4
@@ -167,12 +185,3 @@ a.label
 
 		.header-content
 			margin-top: 30px
-
-
-	// .content[role="main"]
-	// 	overflow: auto
-	// 	height: 100%
-	// 	-webkit-overflow-scrolling: touch
-	// 	position: fixed
-	// 	z-index: 0
-	// 	padding-top: 70px
