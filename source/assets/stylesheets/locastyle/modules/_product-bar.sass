@@ -1,30 +1,42 @@
-//deixa a barra fixo por enquanto
-body
-	#lwbar-header
-		height: 30px
-		position: fixed
-		width: 100%
+.with-lwbar-both .product-bar,
+.with-lwbar-header .product-bar
+	top: 34px
 
-.bar
-	background-color: $gray1
-	height: 60px
+.main-sidebar .product-bar
 	position: relative
-	top: 30px
-	z-index: 0
-	opacity: .9
+	top: 0
+	width: 100%
+
+.product-bar
+	position: fixed
+	top: 0
+	z-index: 4
+	width: 100%
+	height: 60px
+	padding: 10px
+	color: #fff
+	background-color: $gray2
+
+	.logo
+		padding-top: 5px
+		color: #fff
+		font-size: 20px
+
+		&:before
+			display: inline
+			font-size: 32px
 
 	.identify
 		color: #fff
 		display: inline-block
-		margin-left: 320px
-		margin-top: 20px
+		padding-top: 10px
 
 		&:hover,
 		&:focus
 			color: #fff
 
 	.nav-icons
-		margin: 14px
+		margin: 4px
 		float: right
 
 		a
@@ -36,9 +48,19 @@ body
 			height: 32px
 			width: 32px
 
+			&:before
+				transition: all ease-in .2s
+				-webkit-transition: all ease-in .2s
+				-moz-transition: all ease-in .2s
+
 			&:hover,
 			&:focus
-				opacity: .8
+
+				&:before
+					box-shadow: inset 0 0 0 2px #fff
+					-webkit-transform: scale(0.9)
+					-moz-transform: scale(0.9)
+					transform: scale(0.9)
 
 			&:before
 				+border-circle(32px, 18px)
