@@ -11,6 +11,7 @@ var locastyle = (function() {
     select2DefaultConfig();
     btnGroupActivationToogle();
     subMenu();
+    checkMainSidebar();
   }
 
   // Aquele background cinza que fica sempre atrás do elemento Shortcut
@@ -24,6 +25,16 @@ var locastyle = (function() {
     $( window ).resize(function() {
       $('.bg-shortcut-workaround').css('height', $('.shortcut-box').outerHeight());
     });
+  }
+
+  // Verifica se existe a Sidebar lateral e aplica uma clase no elemento HTML
+  function checkMainSidebar() {
+    var sidebarEl = document.getElementsByClassName('main-sidebar').length;
+
+    if (sidebarEl) {
+      document.getElementsByTagName('html')[0].className+= " with-main-sidebar";
+    };
+
   }
 
   // Verifica qual breakpoint a janela está e insere uma classe no elemento HTML
