@@ -25,7 +25,7 @@ locastyle.mobile = (function() {
   }
 
   function showMainSidebar() {
-    $('.ico-plus').on('click touchstart', function(e) {
+    $('.call-sidebar').on('click touchstart', function(e) {
       e.preventDefault();
 
       $('html').toggleClass('active-main-sidebar');
