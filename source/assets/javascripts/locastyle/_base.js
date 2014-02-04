@@ -152,13 +152,8 @@ var locastyle = (function() {
   var subMenu = function(){
     $("[data-toggle='submenu']").on('click', function(e){
       e.preventDefault();
-<<<<<<< HEAD
-      $('.submenu').addClass('hidden');
-      $(this).next('.submenu').removeClass('hidden');
-=======
       $(this).prev('.submenu').toggleClass('hidden');
       $(this).next('.submenu').toggleClass('hidden');
->>>>>>> adicionando a funcao de submenu
       $(this).toggleClass("active");
     })
   }
