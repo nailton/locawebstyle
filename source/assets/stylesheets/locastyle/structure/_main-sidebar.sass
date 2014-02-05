@@ -4,34 +4,57 @@ $main-sidebar-width: 240px
 .with-lwbar-header .main-sidebar
 	margin-top: 34px
 
-.active-main-sidebar .main-sidebar,
-.active-main-sidebar .wrap-content
-	-webkit-transform: translate3D(0, 0, 0)
+.active-main-sidebar
+	.main-sidebar,
+	.wrap-content
+		-webkit-transform: translate3D(0, 0, 0)
 
-.active-main-sidebar .main-sidebar
-	z-index: 10
+	.main-sidebar
+		z-index: 10
+		overflow: auto
+		-webkit-overflow-scrolling: touch
+		-moz-overflow-scrolling: touch
+		-ms-overflow-scrolling: touch
+		overflow-scrolling: touch
+		box-shadow: 900px 0 0 0 rgba(0, 0, 0, 0.5)
 
-.active-main-sidebar .call-sidebar
-	left: 250px
+	.overlay-bar
+		visibility: visible
+		opacity: .7
+
+	.call-sidebar
+		-webkit-transform: translate3d(250px, 10px, 0)
+		-moz-transform: translate3d(250px, 10px, 0)
+		transform: translate3d(250px, 10px, 0)
 
 .call-sidebar
 	color: #fff
-	position: relative
+	position: absolute
+	top: 0
 	left: 0
+	z-index: 1000
+	-webkit-transform: translate3d(10px, 10px, 0)
+	-moz-transform: translate3d(10px, 10px, 0)
+	transform: translate3d(10px, 10px, 0)
+	-webkit-transition: all .2s ease-in
+	-moz-transition: all .2s ease-in
 	transition: all .2s ease-in
 	font-size: 25px
 
-.call-sidebar:before
-	color: #fff
+	&:before
+		color: #fff
 
 .main-sidebar
+	min-height: 100%
+	height: 100%
+	width: $main-sidebar-width
 	position: fixed
+	overlay: auto
 	z-index: 10
 	background-color: #333
-	min-height: 100%
-	width: $main-sidebar-width
-	height: 100%
 	-webkit-transform: translate3D(-240px, 0, 0)
+	-moz-transform: translate3D(-240px, 0, 0)
+	-ms-transform: translate3D(-240px, 0, 0)
 	transition: -webkit-transform .2s ease-in
 
 	ul
@@ -74,6 +97,7 @@ $main-sidebar-width: 240px
 		float: left
 		-webkit-transform: translate3D(0, 0, 0)
 		position: static
+		overflow: auto
 
 	.call-sidebar
 		display: none

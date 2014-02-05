@@ -15,6 +15,7 @@ $height-short: 350px
 	overflow: auto
 	-webkit-overflow-scrolling: touch
 	-moz-overflow-scrolling: touch
+	-ms-overflow-scrolling: touch
 	overflow-scrolling: touch
 	height: 100%
 	position: relative
@@ -44,11 +45,11 @@ a
 
 // Define características do Overlay que aparece quando usamos sidebar
 .overlay-bar
-	+transition(all .20s linear)
+	+transition(all .25s linear)
 	position: fixed
 	top: 0
 	left: 0
-	z-index: 2
+	z-index: 4
 	background: #000
 	opacity: 0
 	visibility: hidden
