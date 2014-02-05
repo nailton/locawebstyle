@@ -12,10 +12,7 @@ $main-sidebar-width: 240px
 	.main-sidebar
 		z-index: 10
 		overflow: auto
-		-webkit-overflow-scrolling: touch
-		-moz-overflow-scrolling: touch
-		-ms-overflow-scrolling: touch
-		overflow-scrolling: touch
+		position: fixed
 		box-shadow: 900px 0 0 0 rgba(0, 0, 0, 0.5)
 
 	.overlay-bar
@@ -29,7 +26,7 @@ $main-sidebar-width: 240px
 
 .call-sidebar
 	color: #fff
-	position: absolute
+	position: fixed
 	top: 0
 	left: 0
 	z-index: 1000
