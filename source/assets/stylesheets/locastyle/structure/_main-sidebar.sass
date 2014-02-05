@@ -1,3 +1,5 @@
+$main-sidebar-width: 240px
+
 .with-lwbar-both .main-sidebar,
 .with-lwbar-header .main-sidebar
 	margin-top: 34px
@@ -27,7 +29,7 @@
 	z-index: 10
 	background-color: #333
 	min-height: 100%
-	width: 240px
+	width: $main-sidebar-width
 	height: 100%
 	-webkit-transform: translate3D(-240px, 0, 0)
 	transition: -webkit-transform .2s ease-in
@@ -63,3 +65,16 @@
 					text-decoration: none
 					border-left-color: $gray2
 					color: #fff
+
+//
+// De tablet para Desktop
+//
+@media #{$media-tablet}
+	.main-sidebar
+		float: left
+		-webkit-transform: translate3D(0, 0, 0)
+		position: static
+
+	.call-sidebar
+		display: none
+

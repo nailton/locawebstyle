@@ -28,12 +28,16 @@
 
 	.identify
 		color: #fff
-		display: inline-block
+		float: left
 		padding-top: 10px
+		display: none
 
-		&:hover,
-		&:focus
+		a
 			color: #fff
+
+			&:hover,
+			&:focus
+				color: #fff
 
 	.nav-icons
 		margin: 4px
@@ -88,3 +92,14 @@
 
 			&:after
 				border-top-color: #fff
+
+
+//
+// De tablet para Desktop
+//
+@media #{$media-tablet}
+	.product-bar
+		width: calc(100% - 240px)
+
+		.identify
+			display: block
