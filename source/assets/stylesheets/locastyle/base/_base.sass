@@ -13,9 +13,12 @@ $height-short: 350px
 // Wrap que envolve conteúdo principal
 .wrap-content
 	overflow: auto
+	-webkit-overflow-scrolling: touch
+	-moz-overflow-scrolling: touch
+	overflow-scrolling: touch
 	height: 100%
 	position: relative
-	padding-top: 60px
+	padding-top: 40px
 
 .wrap-content > .row
 	margin-right: 0
@@ -187,3 +190,4 @@ a.label
 	// De tablet para Desktop
 	//
 	.wrap-content
+		padding-top: 40px
