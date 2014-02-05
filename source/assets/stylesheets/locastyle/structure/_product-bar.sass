@@ -2,11 +2,6 @@
 .with-lwbar-header .product-bar
 	top: 34px
 
-.main-sidebar .product-bar
-	position: relative
-	top: 0
-	width: 100%
-
 .product-bar
 	position: fixed
 	top: 0
@@ -18,13 +13,16 @@
 	background-color: $gray2
 
 	.logo
+		float: none
+		margin: 0 auto
+		width: 75%
 		padding-top: 5px
 		color: #fff
 		font-size: 20px
+		text-align: center
 
 		&:before
-			display: inline
-			font-size: 32px
+			display: none
 
 	.identify
 		color: #fff
@@ -93,18 +91,21 @@
 			&:after
 				border-top-color: #fff
 
-
 //
 // De tablet para Desktop
 //
 @media #{$media-tablet}
 
-	.main-sidebar .product-bar
-		left: 0
-
 	.product-bar
-		width: calc(100% - 240px)
-		left: 240px
+		.logo
+			float: left
+			width: 220px
+			text-align: left
+			margin-right: 20px
+
+			&:before
+				display: inline
+				font-size: 32px
 
 		.identify
 			display: block
